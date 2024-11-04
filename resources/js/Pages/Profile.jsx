@@ -1,4 +1,4 @@
-import { useForm, usePage } from "@inertiajs/react";
+import { useForm, usePage, router } from "@inertiajs/react";
 import { useState } from "react";
 
 export default function Profile() {
@@ -54,6 +54,12 @@ export default function Profile() {
         setImagePreview(null);
         setEditingPost(null);
     };
+
+    function handleMessages(post) {
+        if (post) {
+            router.visit(`/postmessages/${post.id}`);
+        }
+    }
 
     return (
         <>
@@ -165,6 +171,7 @@ export default function Profile() {
                                             <button onClick={() => handleDelete(post.id)} className="delete-btn">Delete</button>
                                             <button onClick={() => handleUpdate(post)} className="update-btn">Update</button>
                                         </div>
+                                        <button onClick={() => handleMessages(post)} className="message-btn">Messages</button>
                                     </div>
                                 ))}
                         </div>

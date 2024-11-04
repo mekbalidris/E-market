@@ -36,7 +36,9 @@ export default function Layout({ children }) {
 
             <main>
             <BrowserRouter>
+            <div className="mt-2.5">
                 {children}
+            </div>
             </BrowserRouter>
             </main>
         </>

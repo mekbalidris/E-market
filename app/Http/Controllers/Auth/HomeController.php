@@ -15,7 +15,6 @@ class HomeController extends Controller
         
             $posts = Post::with('user')->orderBy("created_at", "desc")->get();
 
-
         return Inertia::render('Home', [
             'auth' => [
                 'user' => Auth::user(),
@@ -23,7 +22,7 @@ class HomeController extends Controller
             'posts' => $posts,
         ]);}
         else{
-            return Inertia::render('Login');
+            return Inertia::render('Home');
         }
     }
 }
