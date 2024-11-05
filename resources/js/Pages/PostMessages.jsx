@@ -1,7 +1,7 @@
 import { router, usePage } from "@inertiajs/react";
 
 export default function PostMessages() {
-    const { chats } = usePage().props;
+    const { chats=[] } = usePage().props;
 
     function gotochat(link) {
         router.visit(link);
